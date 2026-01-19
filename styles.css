@@ -82,6 +82,8 @@ header .container {
     font-weight: 700;
     color: var(--text-dark);
     letter-spacing: -0.5px;
+    outline: none;
+    border: none;
 }
 
 .nav-links {
