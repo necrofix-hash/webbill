@@ -152,14 +152,14 @@ header .container {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background-image: url('hero-bg.png');
-    /* Will generate this */
+    background-image: url('images/hero_dog.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 80% center;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding-top: 12vh;
     text-align: center;
     color: var(--white);
 }
@@ -272,27 +272,44 @@ header .container {
 
 .feature-card {
     background: var(--white);
-    padding: 40px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
     text-align: center;
     transition: var(--transition);
+    overflow: hidden;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-.icon-box {
-    font-size: 3rem;
-    margin-bottom: 24px;
-    display: inline-block;
+.feature-img-wrap {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+}
+
+.feature-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.feature-card:hover .feature-img-wrap img {
+    transform: scale(1.05);
+}
+
+.feature-text {
+    padding: 32px 28px;
 }
 
 .feature-card h3 {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     color: var(--text-dark);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .feature-card p {
@@ -327,11 +344,11 @@ header .container {
 }
 
 .room-1 {
-    background-image: url('room-1.png');
+    background-image: url('images/room-1.jpg');
 }
 
 .room-2 {
-    background-image: url('room-2.png');
+    background-image: url('images/room-2.jpg');
 }
 
 .room-info {
@@ -489,6 +506,12 @@ footer {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+    .hero {
+        background-position: 40% center;
+        align-items: flex-start;
+        padding-top: 100px;
+    }
+
     .nav-links {
         position: absolute;
         right: 0px;
